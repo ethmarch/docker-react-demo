@@ -2,10 +2,10 @@ sudo: required
 services: 
   - docker
 
-  before_install:
-    - docker build -t ethanmarch/docker-react-demo -f Dockerfile.dev .
+before_install:
+  - docker build -t ethanmarch/docker-react-demo -f Dockerfile.dev .
 
-  language: generic
+language: generic
 
-  script:
-    - docker run -e CI=true ethanmarch/docker-react-demo npm run test -- --coverage
+script:
+  - docker run -e CI=true ethanmarch/docker-react-demo npm run test -- --coverage
